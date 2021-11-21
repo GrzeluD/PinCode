@@ -1,6 +1,5 @@
 class PinCode
   @@digit = 5
-
   def initialize(*args)
     args.each do |arg|
       decode_pin(arg, @@digit)
@@ -11,29 +10,13 @@ class PinCode
     arg.split("").each do |i|
       case i
       when "U"
-        if digit == 1 || digit == 2 || digit == 3
-          digit
-        else
-          digit -= 3
-        end
+        digit == 1 || digit == 2 || digit == 3 ? digit : digit -= 3
       when "R"
-        if digit == 3 || digit == 6 || digit == 9
-          digit
-        else
-          digit += 1
-        end
+        digit == 3 || digit == 6 || digit == 9 ? digit : digit += 1
       when "D"
-        if digit == 7 || digit == 8 || digit == 9
-          digit
-        else
-          digit += 3
-        end
+        digit == 7 || digit == 8 || digit == 9 ? digit : digit += 3
       when "L"
-        if digit == 1 || digit == 4 || digit == 7
-          digit
-        else
-          digit -= 1
-        end
+        digit == 1 || digit == 4 || digit == 7 ? digit : digit -= 1
       else
       end
     end
