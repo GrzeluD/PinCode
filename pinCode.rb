@@ -1,9 +1,12 @@
 class PinCode
   @@digit = 5
+  @@decoded_pin = []
   def initialize(*args)
     args.each do |arg|
-      decode_pin(arg, @@digit)
+      @@decoded_pin << decode_pin(arg, @@digit)
     end
+    print @@decoded_pin.join('')
+    @@decoded_pin.join('')
   end
 
   def decode_pin(arg, digit)
@@ -21,7 +24,6 @@ class PinCode
       end
     end
     @@digit = digit
-    print @@digit
   end
 end
 
